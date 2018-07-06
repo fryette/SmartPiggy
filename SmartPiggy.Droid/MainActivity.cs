@@ -23,7 +23,6 @@ namespace SmartPiggy.Droid
 				SetSupportActionBar(toolbar);
 				SupportActionBar.SetDisplayHomeAsUpEnabled(false);
 				SupportActionBar.SetHomeButtonEnabled(false);
-
 			}
 
 			bottomNavigation = FindViewById<BottomNavigationView>(Resource.Id.bottom_navigation);
@@ -45,7 +44,7 @@ namespace SmartPiggy.Droid
 			switch (id)
 			{
 				case Resource.Id.menu_home:
-					fragment = Fragment1.NewInstance();
+					fragment = CreateAim.NewInstance();
 					break;
 				case Resource.Id.menu_audio:
 					fragment = Fragment2.NewInstance();

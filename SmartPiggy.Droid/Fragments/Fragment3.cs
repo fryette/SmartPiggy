@@ -1,6 +1,13 @@
+using System.Linq;
+using System.Threading.Tasks;
+using Android.App;
+using Android.Bluetooth;
 using Android.OS;
-using Android.Support.V4.App;
 using Android.Views;
+using Android.Widget;
+using SmartPiggy.Core;
+using SmartPiggy.Droid.Fragments.Adapters;
+using Fragment = Android.Support.V4.App.Fragment;
 
 namespace SmartPiggy.Droid.Fragments
 {
@@ -23,7 +30,30 @@ namespace SmartPiggy.Droid.Fragments
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
 			var ignored = base.OnCreateView(inflater, container, savedInstanceState);
-			return inflater.Inflate(Resource.Layout.fragment3, null);
+			var fragment = inflater.Inflate(Resource.Layout.fragment3, null);
+
+
+			var listview = fragment.FindViewById<ListView>(Resource.Id.aims);
+
+			Task.Factory.StartNew(
+				async () =>
+				{
+					var purseManager = new AimManager(new Storage());
+					var aims = await purseManager.LoadAimsAsync();
+
+					Activity.RunOnUiThread(
+						() =>
+						{
+							listview.Adapter = new AimsAdapter(Activity, aims.ToList());
+						});
+				});
+
+			listview.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
+			{
+				Toast.MakeText(Activity, ((TextView)args.View).Text, ToastLength.Short).Show();
+			};
+
+			return fragment;
 		}
 	}
 }

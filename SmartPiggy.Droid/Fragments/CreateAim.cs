@@ -1,6 +1,5 @@
 using System;
 using Android.OS;
-using Android.Support.Design.Widget;
 using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
@@ -9,12 +8,13 @@ using SmartPiggy.Core.Models;
 
 namespace SmartPiggy.Droid.Fragments
 {
-	public class Fragment1 : Fragment
+	public class CreateAim : Fragment
 	{
-		private EditText _dateEditControl;
+		private EditText _startDateEditControl;
 		private EditText _purseName;
 		private EditText _initialBalance;
 		private EditText _finalBalance;
+		private EditText _endDateEditControl;
 
 		public override void OnCreate(Bundle savedInstanceState)
 		{
@@ -22,26 +22,27 @@ namespace SmartPiggy.Droid.Fragments
 			// Create your fragment here
 		}
 
-		public static Fragment1 NewInstance()
+		public static CreateAim NewInstance()
 		{
-			var frag1 = new Fragment1 { Arguments = new Bundle() };
+			var frag1 = new CreateAim { Arguments = new Bundle() };
 			return frag1;
 		}
-
 
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
 			var ignored = base.OnCreateView(inflater, container, savedInstanceState);
 
-			var view = inflater.Inflate(Resource.Layout.fragment1, null);
+			var view = inflater.Inflate(Resource.Layout.CreateAim, null);
 
-			_dateEditControl = view.FindViewById<EditText>(Resource.Id.date);
+			_startDateEditControl = view.FindViewById<EditText>(Resource.Id.date);
+			_endDateEditControl = view.FindViewById<EditText>(Resource.Id.endDate);
 			var saveButton = view.FindViewById<Button>(Resource.Id.saveButton);
-			_purseName = view.FindViewById<EditText>(Resource.Id.purseName);
+			_purseName = view.FindViewById<EditText>(Resource.Id.aimName);
 			_initialBalance = view.FindViewById<EditText>(Resource.Id.initialBalance);
 			_finalBalance = view.FindViewById<EditText>(Resource.Id.finalBalance);
 
-			_dateEditControl.Click += OnChooseDateClick;
+			_startDateEditControl.Click += OnChooseStartDateClick;
+			_endDateEditControl.Click += OnChooseStartDateClick;
 			saveButton.Click += OnSaveButtonClick;
 
 			return view;
@@ -49,20 +50,22 @@ namespace SmartPiggy.Droid.Fragments
 
 		private async void OnSaveButtonClick(object sender, EventArgs e)
 		{
-			var purse = new Purse
+			var purse = new Aim
 			{
-				Aim = double.Parse(_finalBalance.Text),
-				Current = double.Parse(_initialBalance.Text),
-				Name = _purseName.Text
+				Name = _purseName.Text,
+				FinalBalance = double.Parse(_finalBalance.Text),
+				CurrentBalance = double.Parse(_initialBalance.Text),
+				StartDate = DateTime.Parse(_startDateEditControl.Text),
+				FinalDate = DateTime.Parse(_endDateEditControl.Text)
 			};
 
-			var purseManager = new PurseManager(new Storage());
+			var purseManager = new AimManager(new Storage());
 
 			await purseManager.SaveChanges(purse);
-			var purses = await purseManager.LoadPursesAsync();
+			var purses = await purseManager.LoadAimsAsync();
 		}
 
-		public void OnChooseDateClick(object sender, EventArgs eventArgs)
+		public void OnChooseStartDateClick(object sender, EventArgs eventArgs)
 		{
 			var textControl = sender as EditText;
 
