@@ -1,13 +1,11 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Android.App;
-using Android.Bluetooth;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
 using SmartPiggy.Core;
 using SmartPiggy.Droid.Fragments.Adapters;
-using Fragment = Android.Support.V4.App.Fragment;
 
 namespace SmartPiggy.Droid.Fragments
 {

@@ -1,10 +1,9 @@
+using Android.App;
 using Android.OS;
-using Android.Support.V4.App;
 using Android.Views;
 using Microcharts;
 using Microcharts.Droid;
 using SkiaSharp;
-using SmartPiggy.Core;
 
 namespace SmartPiggy.Droid.Fragments
 {

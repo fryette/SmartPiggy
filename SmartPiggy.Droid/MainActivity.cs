@@ -1,46 +1,54 @@
 ﻿using Android.App;
 using Android.OS;
 using SmartPiggy.Droid.Fragments;
-
 using Android.Support.Design.Widget;
-using Android.Support.V7.App;
+using Android.Widget;
+using GalaSoft.MvvmLight.Views;
+using SmartPiggy.Core.ViewModels;
 
 namespace SmartPiggy.Droid
 {
 	[Activity(Label = "@string/app_name", MainLauncher = true, LaunchMode = Android.Content.PM.LaunchMode.SingleTop, Icon = "@drawable/icon")]
-	public class MainActivity : AppCompatActivity
+	public class MainActivity : ActivityBase
 	{
 
-		BottomNavigationView bottomNavigation;
+		private MainViewModel Vm
+		{
+			get
+			{
+				return App.Locator.Main;
+			}
+		}
+
+		BottomNavigationView _bottomNavigation;
+
 		protected override void OnCreate(Bundle bundle)
 		{
 
 			base.OnCreate(bundle);
 			SetContentView(Resource.Layout.main);
-			var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+			var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
 			if (toolbar != null)
 			{
-				SetSupportActionBar(toolbar);
-				SupportActionBar.SetDisplayHomeAsUpEnabled(false);
-				SupportActionBar.SetHomeButtonEnabled(false);
+				SetActionBar(toolbar);
+				ActionBar.SetDisplayHomeAsUpEnabled(false);
+				ActionBar.SetHomeButtonEnabled(false);
 			}
 
-			bottomNavigation = FindViewById<BottomNavigationView>(Resource.Id.bottom_navigation);
-
-
-			bottomNavigation.NavigationItemSelected += BottomNavigation_NavigationItemSelected;
+			_bottomNavigation = FindViewById<BottomNavigationView>(Resource.Id.bottom_navigation);
+			_bottomNavigation.NavigationItemSelected += OnBottomNavigationItemSelected;
 
 			LoadFragment(Resource.Id.menu_home);
 		}
 
-		private void BottomNavigation_NavigationItemSelected(object sender, BottomNavigationView.NavigationItemSelectedEventArgs e)
+		private void OnBottomNavigationItemSelected(object sender, BottomNavigationView.NavigationItemSelectedEventArgs e)
 		{
 			LoadFragment(e.Item.ItemId);
 		}
 
-		void LoadFragment(int id)
+		private void LoadFragment(int id)
 		{
-			Android.Support.V4.App.Fragment fragment = null;
+			Fragment fragment = null;
 			switch (id)
 			{
 				case Resource.Id.menu_home:
@@ -56,9 +64,8 @@ namespace SmartPiggy.Droid
 			if (fragment == null)
 				return;
 
-			SupportFragmentManager.BeginTransaction()
-			   .Replace(Resource.Id.content_frame, fragment)
-			   .Commit();
+			FragmentManager.BeginTransaction().Replace(Resource.Id.content_frame, fragment)
+				.Commit();
 		}
 	}
 }
