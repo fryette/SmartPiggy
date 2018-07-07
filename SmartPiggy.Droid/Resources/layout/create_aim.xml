@@ -16,6 +16,7 @@
             tools:context=".MainActivity">
 
             <EditText
+                android:focusable="false"
                 android:id="@+id/date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -31,6 +32,7 @@
 
             <EditText
                 android:id="@+id/endDate"
+                android:focusable="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"

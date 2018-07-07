@@ -3348,7 +3348,7 @@ namespace SmartPiggy.Droid
 			public const int aim_list_item = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
-			public const int CreateAim = 2130903068;
+			public const int create_aim = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
 			public const int design_bottom_navigation_item = 2130903069;

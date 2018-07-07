@@ -32,7 +32,7 @@ namespace SmartPiggy.Droid.Fragments
 		{
 			var ignored = base.OnCreateView(inflater, container, savedInstanceState);
 
-			var view = inflater.Inflate(Resource.Layout.CreateAim, null);
+			var view = inflater.Inflate(Resource.Layout.create_aim, null);
 
 			_startDateEditControl = view.FindViewById<EditText>(Resource.Id.date);
 			_endDateEditControl = view.FindViewById<EditText>(Resource.Id.endDate);
