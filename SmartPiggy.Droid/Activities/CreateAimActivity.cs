@@ -18,6 +18,9 @@ namespace SmartPiggy.Droid
 		private List<Binding> _bindings;
 		private EditText _startDateEditControl;
 		private EditText _finalDateEditControl;
+		private EditText _aimName;
+		private EditText _currentBalance;
+		private EditText _finalBalance;
 
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
@@ -32,12 +35,15 @@ namespace SmartPiggy.Droid
 
 			_startDateEditControl = FindViewById<EditText>(Resource.Id.startDate);
 			_finalDateEditControl = FindViewById<EditText>(Resource.Id.endDate);
+			_aimName = FindViewById<EditText>(Resource.Id.aimName);
+			_currentBalance = FindViewById<EditText>(Resource.Id.initialBalance);
+			_finalBalance = FindViewById<EditText>(Resource.Id.finalBalance);
 
 			_bindings = new List<Binding>
 			{
-				this.SetBinding(() => FindViewById<EditText>(Resource.Id.aimName).Text, () => _vm.Name, BindingMode.OneWay),
-				this.SetBinding(() => FindViewById<EditText>(Resource.Id.initialBalance).Text, () => _vm.CurrentBalance, BindingMode.OneWay).ConvertSourceToDouble(),
-				this.SetBinding(() => FindViewById<EditText>(Resource.Id.finalBalance).Text, () => _vm.FinalBalance, BindingMode.OneWay).ConvertSourceToDouble(),
+				this.SetBinding(() => _aimName.Text, () => _vm.Name, BindingMode.OneWay),
+				this.SetBinding(() => _currentBalance.Text, () => _vm.CurrentBalance, BindingMode.OneWay).ConvertSourceToDouble(),
+				this.SetBinding(() => _finalBalance.Text, () => _vm.FinalBalance, BindingMode.OneWay).ConvertSourceToDouble(),
 				this.SetBinding(() => _startDateEditControl.Text, () => _vm.StartDate, BindingMode.OneWay).ConvertSourceToDateTime(),
 				this.SetBinding(() => _finalDateEditControl.Text, () => _vm.FinalDate, BindingMode.OneWay).ConvertSourceToDateTime()
 			};
