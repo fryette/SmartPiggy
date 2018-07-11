@@ -14,45 +14,42 @@ namespace SmartPiggy.Droid
 	[Activity(Label = "@string/app_name", LaunchMode = Android.Content.PM.LaunchMode.SingleTop, Icon = "@drawable/icon")]
 	public class CreateAimActivity : ActivityBase
 	{
-		private CreateAimViewModel Vm => App.Locator.CreateAim;
+		private CreateAimViewModel _vm;
+		private List<Binding> _bindings;
+		private EditText _startDateEditControl;
+		private EditText _finalDateEditControl;
 
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
 
+			_vm = App.Locator.CreateAim;
+
 			// Set our view from the "Second" layout resource
 			SetContentView(Resource.Layout.create_aim);
 
+			FindViewById<Button>(Resource.Id.saveButton).SetCommand(_vm.SaveCommand);
+
 			_startDateEditControl = FindViewById<EditText>(Resource.Id.startDate);
 			_finalDateEditControl = FindViewById<EditText>(Resource.Id.endDate);
-			FindViewById<Button>(Resource.Id.saveButton).SetCommand(Vm.SaveCommand);
-			_aimName = FindViewById<EditText>(Resource.Id.aimName);
-			_currentBalance = FindViewById<EditText>(Resource.Id.initialBalance);
-			_finalBalance = FindViewById<EditText>(Resource.Id.finalBalance);
 
 			_bindings = new List<Binding>
 			{
-				this.SetBinding(() => _aimName.Text, () => Vm.Name, BindingMode.OneWay),
-				this.SetBinding(() => _currentBalance.Text, () => Vm.CurrentBalance, BindingMode.OneWay).ConvertSourceToDouble(),
-				this.SetBinding(() => _finalBalance.Text, () => Vm.FinalBalance, BindingMode.OneWay).ConvertSourceToDouble(),
-				this.SetBinding(() => _startDateEditControl.Text, () => Vm.StartDate, BindingMode.OneWay).ConvertSourceToDateTime(),
-				this.SetBinding(() => _finalDateEditControl.Text, () => Vm.FinalDate, BindingMode.OneWay).ConvertSourceToDateTime()
+				this.SetBinding(() => FindViewById<EditText>(Resource.Id.aimName).Text, () => _vm.Name, BindingMode.OneWay),
+				this.SetBinding(() => FindViewById<EditText>(Resource.Id.initialBalance).Text, () => _vm.CurrentBalance, BindingMode.OneWay).ConvertSourceToDouble(),
+				this.SetBinding(() => FindViewById<EditText>(Resource.Id.finalBalance).Text, () => _vm.FinalBalance, BindingMode.OneWay).ConvertSourceToDouble(),
+				this.SetBinding(() => _startDateEditControl.Text, () => _vm.StartDate, BindingMode.OneWay).ConvertSourceToDateTime(),
+				this.SetBinding(() => _finalDateEditControl.Text, () => _vm.FinalDate, BindingMode.OneWay).ConvertSourceToDateTime()
 			};
 
 			_startDateEditControl.Click += OnChooseStartDateClick;
 			_finalDateEditControl.Click += OnChooseStartDateClick;
 		}
 
-		private EditText _startDateEditControl;
-		private EditText _aimName;
-		private EditText _currentBalance;
-		private EditText _finalBalance;
-		private EditText _finalDateEditControl;
-		private List<Binding> _bindings;
 
 		public void OnChooseStartDateClick(object sender, EventArgs eventArgs)
 		{
-			var textControl = sender as EditText;
+			var textControl = (EditText)sender;
 
 			var frag = DatePickerFragment.NewInstance(delegate (DateTime time)
 			{
