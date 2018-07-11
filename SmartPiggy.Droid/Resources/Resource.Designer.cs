@@ -2736,9 +2736,6 @@ namespace SmartPiggy.Droid
 			// aapt resource value: 0x7f07002f
 			public const int auto = 2131165231;
 			
-			// aapt resource value: 0x7f0700b2
-			public const int backButton = 2131165362;
-			
 			// aapt resource value: 0x7f070046
 			public const int basic = 2131165254;
 			
@@ -2808,9 +2805,6 @@ namespace SmartPiggy.Droid
 			// aapt resource value: 0x7f07005c
 			public const int customPanel = 2131165276;
 			
-			// aapt resource value: 0x7f07007f
-			public const int date = 2131165311;
-			
 			// aapt resource value: 0x7f07006a
 			public const int decor_content_parent = 2131165290;
 			
@@ -2841,8 +2835,8 @@ namespace SmartPiggy.Droid
 			// aapt resource value: 0x7f070021
 			public const int end = 2131165217;
 			
-			// aapt resource value: 0x7f070080
-			public const int endDate = 2131165312;
+			// aapt resource value: 0x7f07007f
+			public const int endDate = 2131165311;
 			
 			// aapt resource value: 0x7f0700b0
 			public const int end_padder = 2131165360;
@@ -2928,20 +2922,20 @@ namespace SmartPiggy.Droid
 			// aapt resource value: 0x7f070094
 			public const int main_content = 2131165332;
 			
-			// aapt resource value: 0x7f0700b4
-			public const int masked = 2131165364;
+			// aapt resource value: 0x7f0700b2
+			public const int masked = 2131165362;
 			
 			// aapt resource value: 0x7f0700a0
 			public const int media_actions = 2131165344;
 			
-			// aapt resource value: 0x7f0700b6
-			public const int menu_audio = 2131165366;
+			// aapt resource value: 0x7f0700b4
+			public const int menu_audio = 2131165364;
+			
+			// aapt resource value: 0x7f0700b3
+			public const int menu_home = 2131165363;
 			
 			// aapt resource value: 0x7f0700b5
-			public const int menu_home = 2131165365;
-			
-			// aapt resource value: 0x7f0700b7
-			public const int menu_video = 2131165367;
+			public const int menu_video = 2131165365;
 			
 			// aapt resource value: 0x7f070022
 			public const int middle = 2131165218;
@@ -3111,6 +3105,9 @@ namespace SmartPiggy.Droid
 			// aapt resource value: 0x7f070036
 			public const int start = 2131165238;
 			
+			// aapt resource value: 0x7f070080
+			public const int startDate = 2131165312;
+			
 			// aapt resource value: 0x7f07009f
 			public const int status_bar_latest_event_content = 2131165343;
 			
@@ -3134,9 +3131,6 @@ namespace SmartPiggy.Droid
 			
 			// aapt resource value: 0x7f070059
 			public const int textSpacerNoTitle = 2131165273;
-			
-			// aapt resource value: 0x7f0700b1
-			public const int textView1 = 2131165361;
 			
 			// aapt resource value: 0x7f070092
 			public const int textView2 = 2131165330;
@@ -3189,8 +3183,8 @@ namespace SmartPiggy.Droid
 			// aapt resource value: 0x7f07000e
 			public const int view_offset_helper = 2131165198;
 			
-			// aapt resource value: 0x7f0700b3
-			public const int visible = 2131165363;
+			// aapt resource value: 0x7f0700b1
+			public const int visible = 2131165361;
 			
 			// aapt resource value: 0x7f070027
 			public const int withText = 2131165223;
@@ -3447,22 +3441,19 @@ namespace SmartPiggy.Droid
 			public const int notification_template_part_time = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
-			public const int Second = 2130903101;
+			public const int select_dialog_item_material = 2130903101;
 			
 			// aapt resource value: 0x7f03003e
-			public const int select_dialog_item_material = 2130903102;
+			public const int select_dialog_multichoice_material = 2130903102;
 			
 			// aapt resource value: 0x7f03003f
-			public const int select_dialog_multichoice_material = 2130903103;
+			public const int select_dialog_singlechoice_material = 2130903103;
 			
 			// aapt resource value: 0x7f030040
-			public const int select_dialog_singlechoice_material = 2130903104;
+			public const int support_simple_spinner_dropdown_item = 2130903104;
 			
 			// aapt resource value: 0x7f030041
-			public const int support_simple_spinner_dropdown_item = 2130903105;
-			
-			// aapt resource value: 0x7f030042
-			public const int toolbar = 2130903106;
+			public const int toolbar = 2130903105;
 			
 			static Layout()
 			{

@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SmartPiggy.Core.Interfaces;
 using SmartPiggy.Core.Models;
 
 namespace SmartPiggy.Core
 {
-	public class AimManager
+	public class AimManager : IAimManager
 	{
 		private readonly IStorage _storage;
 		private const string PURSES_STRING = "PURSES";
@@ -15,60 +16,60 @@ namespace SmartPiggy.Core
 			_storage = storage;
 		}
 
-		public Task<IEnumerable<Aim>> LoadAimsAsync()
+		public Task<IEnumerable<AimModel>> LoadAimsAsync()
 		{
-			return _storage.GetAllAsync<Aim>(PURSES_STRING);
+			return _storage.GetAllAsync<AimModel>(PURSES_STRING);
 		}
 
-		public Task RemoveAim(Aim aim)
+		public Task RemoveAim(AimModel aimModel)
 		{
-			return _storage.DeleteAsync(PURSES_STRING, aim.Name);
+			return _storage.DeleteAsync(PURSES_STRING, aimModel.Name);
 		}
 
-		public Task SaveChanges(Aim aim)
+		public Task SaveChangesAsync(AimModel aimModel)
 		{
-			return _storage.SaveAsync(PURSES_STRING, aim.Name, aim);
+			return _storage.SaveAsync(PURSES_STRING, aimModel.Name, aimModel);
 		}
 
-		public double GetPeriodMoney(Aim aim)
+		public double GetPeriodMoney(AimModel aimModel)
 		{
-			var needToCollect = aim.FinalBalance - aim.CurrentBalance;
-			var period = aim.FinalDate - aim.StartDate;
-			var totalWeeks = period.TotalDays / aim.DayPeriod;
+			var needToCollect = aimModel.FinalBalance - aimModel.CurrentBalance;
+			var period = aimModel.FinalDate - aimModel.StartDate;
+			var totalWeeks = period.TotalDays / aimModel.DayPeriod;
 
 			var everyWeekMoneyNeed = needToCollect / totalWeeks;
 
 			return everyWeekMoneyNeed;
 		}
 
-		public List<DateTime> CalculateIdealTimePoints(Aim aim)
+		public List<DateTime> CalculateIdealTimePoints(AimModel aimModel)
 		{
 			var result = new List<DateTime>();
-			for (var date = aim.StartDate; date < aim.FinalDate;)
+			for (var date = aimModel.StartDate; date < aimModel.FinalDate;)
 			{
 				result.Add(date);
-				date = date.AddDays(aim.DayPeriod);
+				date = date.AddDays(aimModel.DayPeriod);
 			}
 
 			return result;
 		}
 
-		public List<KeyValuePair<DateTime, double>> CalculateActualTimePoints(Aim aim)
+		public List<KeyValuePair<DateTime, double>> CalculateActualTimePoints(AimModel aimModel)
 		{
 			var result = new List<KeyValuePair<DateTime, double>>();
 
-			var startDate = aim.StartDate;
+			var startDate = aimModel.StartDate;
 
-			if (aim.History.Any())
+			if (aimModel.History.Any())
 			{
-				startDate = aim.History.Last().Key;
-				result.AddRange(aim.History);
+				startDate = aimModel.History.Last().Key;
+				result.AddRange(aimModel.History);
 			}
 
-			for (var date = startDate; date < aim.FinalDate;)
+			for (var date = startDate; date < aimModel.FinalDate;)
 			{
-				result.Add(new KeyValuePair<DateTime, double>(date, aim.DayPeriod));
-				date = date.AddDays(aim.DayPeriod);
+				result.Add(new KeyValuePair<DateTime, double>(date, aimModel.DayPeriod));
+				date = date.AddDays(aimModel.DayPeriod);
 			}
 
 			return result;

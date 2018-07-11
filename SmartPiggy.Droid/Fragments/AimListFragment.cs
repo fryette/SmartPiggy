@@ -5,12 +5,15 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using SmartPiggy.Core;
+using SmartPiggy.Core.ViewModels;
 using SmartPiggy.Droid.Fragments.Adapters;
 
 namespace SmartPiggy.Droid.Fragments
 {
-	public class Fragment3 : Fragment
+	public class AimListFragment : Fragment
 	{
+		private MainViewModel Vm => App.Locator.Main;
+
 		public override void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
@@ -18,12 +21,11 @@ namespace SmartPiggy.Droid.Fragments
 			// Create your fragment here
 		}
 
-		public static Fragment3 NewInstance()
+		public static AimListFragment NewInstance()
 		{
-			var frag3 = new Fragment3 { Arguments = new Bundle() };
+			var frag3 = new AimListFragment { Arguments = new Bundle() };
 			return frag3;
 		}
-
 
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
@@ -48,7 +50,8 @@ namespace SmartPiggy.Droid.Fragments
 
 			listview.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
 			{
-				Toast.MakeText(Activity, ((TextView)args.View).Text, ToastLength.Short).Show();
+				Vm.NavigateToCreateAimPage();
+				//Toast.MakeText(Activity, ((TextView)args.View).Text, ToastLength.Short).Show();
 			};
 
 			return fragment;

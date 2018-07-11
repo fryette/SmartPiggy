@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SmartPiggy.Core.Models
 {
-	public class Aim
+	public class AimModel
 	{
 		public double CurrentBalance { get; set; }
 		public double FinalBalance { get; set; }

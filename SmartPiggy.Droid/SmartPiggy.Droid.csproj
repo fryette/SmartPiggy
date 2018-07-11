@@ -139,12 +139,12 @@
     <Compile Include="Fragments\Adapters\AimsAdapter.cs" />
     <Compile Include="Fragments\DatePickerFragment.cs" />
     <Compile Include="Fragments\CreateAim.cs" />
-    <Compile Include="Fragments\Fragment3.cs" />
+    <Compile Include="Fragments\AimListFragment.cs" />
     <Compile Include="Fragments\Fragment2.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SecondActivity.cs" />
+    <Compile Include="CreateAimActivity.cs" />
     <Compile Include="Storage.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -206,9 +206,6 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_action_videocam.png" />
     <AndroidResource Include="Resources\drawable\nav_item_colors.xml" />
     <AndroidResource Include="Resources\layout\aim_list_item.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\Second.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

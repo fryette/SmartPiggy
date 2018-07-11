@@ -1,6 +1,8 @@
 ﻿using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Threading;
 using GalaSoft.MvvmLight.Views;
+using SmartPiggy.Core;
+using SmartPiggy.Core.Interfaces;
 using SmartPiggy.Core.ViewModels;
 
 namespace SmartPiggy.Droid
@@ -23,7 +25,10 @@ namespace SmartPiggy.Droid
 					var nav = new NavigationService();
 					SimpleIoc.Default.Register<INavigationService>(() => nav);
 
-					nav.Configure(ViewModelLocator.SecondPageKey, typeof(SecondActivity));
+					SimpleIoc.Default.Register<IStorage, Storage>();
+
+					nav.Configure(ViewModelLocator.CREATE_AIM_PAGE_KEY, typeof(CreateAimActivity));
+					nav.Configure(ViewModelLocator.MAIN_PAGE_KEY, typeof(MainActivity));
 
 					_locator = new ViewModelLocator();
 				}

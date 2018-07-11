@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using PCLStorage;
-using SmartPiggy.Core;
+using SmartPiggy.Core.Interfaces;
 
 namespace SmartPiggy.Droid
 {

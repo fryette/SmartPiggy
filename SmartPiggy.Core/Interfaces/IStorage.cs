@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace SmartPiggy.Core
+namespace SmartPiggy.Core.Interfaces
 {
 	public interface IStorage
 	{

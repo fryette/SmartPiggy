@@ -10,11 +10,11 @@ using SmartPiggy.Core.Models;
 
 namespace SmartPiggy.Droid.Fragments.Adapters
 {
-	public class AimsAdapter : BaseAdapter<Aim>
+	public class AimsAdapter : BaseAdapter<AimModel>
 	{
-		private readonly List<Aim> _items;
+		private readonly List<AimModel> _items;
 		private readonly Activity _context;
-		public AimsAdapter(Activity context, List<Aim> items)
+		public AimsAdapter(Activity context, List<AimModel> items)
 		{
 			_context = context;
 			_items = items;
@@ -24,7 +24,7 @@ namespace SmartPiggy.Droid.Fragments.Adapters
 			return position;
 		}
 
-		public override Aim this[int position] => _items[position];
+		public override AimModel this[int position] => _items[position];
 
 		public override int Count => _items.Count;
 

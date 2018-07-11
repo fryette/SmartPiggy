@@ -4,27 +4,16 @@ using SmartPiggy.Droid.Fragments;
 using Android.Support.Design.Widget;
 using Android.Widget;
 using GalaSoft.MvvmLight.Views;
-using SmartPiggy.Core.ViewModels;
 
 namespace SmartPiggy.Droid
 {
 	[Activity(Label = "@string/app_name", MainLauncher = true, LaunchMode = Android.Content.PM.LaunchMode.SingleTop, Icon = "@drawable/icon")]
 	public class MainActivity : ActivityBase
 	{
-
-		private MainViewModel Vm
-		{
-			get
-			{
-				return App.Locator.Main;
-			}
-		}
-
 		BottomNavigationView _bottomNavigation;
 
 		protected override void OnCreate(Bundle bundle)
 		{
-
 			base.OnCreate(bundle);
 			SetContentView(Resource.Layout.main);
 			var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
@@ -52,13 +41,14 @@ namespace SmartPiggy.Droid
 			switch (id)
 			{
 				case Resource.Id.menu_home:
-					fragment = CreateAim.NewInstance();
+					fragment = AimListFragment.NewInstance();
 					break;
 				case Resource.Id.menu_audio:
 					fragment = Fragment2.NewInstance();
 					break;
 				case Resource.Id.menu_video:
-					fragment = Fragment3.NewInstance();
+					break;
+				default:
 					break;
 			}
 			if (fragment == null)

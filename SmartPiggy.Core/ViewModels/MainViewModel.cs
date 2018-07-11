@@ -1,13 +1,12 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
+using SmartPiggy.Core.Interfaces;
 
 namespace SmartPiggy.Core.ViewModels
 {
 	public class MainViewModel : ViewModelBase
 	{
-		private string _welcomeTitle;
-		private RelayCommand _navigateCommand;
 		private readonly INavigationService _navigationService;
 
 		/// <summary>
@@ -16,13 +15,14 @@ namespace SmartPiggy.Core.ViewModels
 		public MainViewModel(INavigationService navigationService)
 		{
 			_navigationService = navigationService;
-			WelcomeTitle = "Home Page";
+
+			NavigateCommand =
+				new RelayCommand(() => _navigationService.NavigateTo(ViewModelLocator.CREATE_AIM_PAGE_KEY));
 		}
 
-		public string WelcomeTitle
+		public void NavigateToCreateAimPage()
 		{
-			get => _welcomeTitle;
-			set => Set(ref _welcomeTitle, value);
+			_navigationService.NavigateTo(ViewModelLocator.CREATE_AIM_PAGE_KEY);
 		}
 
 		/// <summary>
@@ -30,13 +30,6 @@ namespace SmartPiggy.Core.ViewModels
 		/// Goes to the second page, using the navigation service.
 		/// Use the "mvvmr*" snippet group to create more such commands.
 		/// </summary>
-		public RelayCommand NavigateCommand
-		{
-			get
-			{
-				return _navigateCommand ?? (_navigateCommand =
-					       new RelayCommand(() => _navigationService.NavigateTo(ViewModelLocator.SecondPageKey)));
-			}
-		}
+		public RelayCommand NavigateCommand { get; }
 	}
 }
