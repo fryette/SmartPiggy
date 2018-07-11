@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
+using SmartPiggy.Core.Extensions;
 using SmartPiggy.Core.Interfaces;
 
 namespace SmartPiggy.Core.ViewModels
@@ -15,14 +16,11 @@ namespace SmartPiggy.Core.ViewModels
 		public MainViewModel(INavigationService navigationService)
 		{
 			_navigationService = navigationService;
-
-			NavigateCommand =
-				new RelayCommand(() => _navigationService.NavigateTo(ViewModelLocator.CREATE_AIM_PAGE_KEY));
 		}
 
 		public void NavigateToCreateAimPage()
 		{
-			_navigationService.NavigateTo(ViewModelLocator.CREATE_AIM_PAGE_KEY);
+			_navigationService.NavigateTo(PageKeys.CREATE_AIM_PAGE.ToString());
 		}
 
 		/// <summary>

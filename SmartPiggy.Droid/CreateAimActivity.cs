@@ -6,6 +6,7 @@ using Android.Widget;
 using GalaSoft.MvvmLight.Helpers;
 using GalaSoft.MvvmLight.Views;
 using SmartPiggy.Core.ViewModels;
+using SmartPiggy.Droid.Extensions;
 using SmartPiggy.Droid.Fragments;
 
 namespace SmartPiggy.Droid
@@ -32,26 +33,10 @@ namespace SmartPiggy.Droid
 			_bindings = new List<Binding>
 			{
 				this.SetBinding(() => _aimName.Text, () => Vm.Name, BindingMode.OneWay),
-				this.SetBinding(() => _currentBalance.Text, () => Vm.CurrentBalance, BindingMode.OneWay).ConvertSourceToTarget(arg =>
-					{
-						double.TryParse(arg, out var result);
-						return result;
-					}),
-				this.SetBinding(() => _finalBalance.Text, () => Vm.FinalBalance, BindingMode.OneWay).ConvertSourceToTarget(arg =>
-				{
-					double.TryParse(arg, out var result);
-					return result;
-				}),
-				this.SetBinding(() => _startDateEditControl.Text, () => Vm.StartDate, BindingMode.OneWay).ConvertSourceToTarget(arg =>
-				{
-					DateTime.TryParse(arg, out var result);
-					return result;
-				}),
-				this.SetBinding(() => _finalDateEditControl.Text, () => Vm.FinalDate, BindingMode.OneWay).ConvertSourceToTarget(arg =>
-				{
-					DateTime.TryParse(arg, out var result);
-					return result;
-				}),
+				this.SetBinding(() => _currentBalance.Text, () => Vm.CurrentBalance, BindingMode.OneWay).ConvertSourceToDouble(),
+				this.SetBinding(() => _finalBalance.Text, () => Vm.FinalBalance, BindingMode.OneWay).ConvertSourceToDouble(),
+				this.SetBinding(() => _startDateEditControl.Text, () => Vm.StartDate, BindingMode.OneWay).ConvertSourceToDateTime(),
+				this.SetBinding(() => _finalDateEditControl.Text, () => Vm.FinalDate, BindingMode.OneWay).ConvertSourceToDateTime()
 			};
 
 			_startDateEditControl.Click += OnChooseStartDateClick;

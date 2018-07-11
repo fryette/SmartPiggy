@@ -2715,11 +2715,11 @@ namespace SmartPiggy.Droid
 			// aapt resource value: 0x7f07001e
 			public const int add = 2131165214;
 			
-			// aapt resource value: 0x7f070081
-			public const int aimName = 2131165313;
+			// aapt resource value: 0x7f070082
+			public const int aimName = 2131165314;
 			
-			// aapt resource value: 0x7f070093
-			public const int aims = 2131165331;
+			// aapt resource value: 0x7f07007b
+			public const int aims = 2131165307;
 			
 			// aapt resource value: 0x7f070060
 			public const int alertTitle = 2131165280;
@@ -2766,8 +2766,8 @@ namespace SmartPiggy.Droid
 			// aapt resource value: 0x7f070047
 			public const int chains = 2131165255;
 			
-			// aapt resource value: 0x7f07007c
-			public const int chartView = 2131165308;
+			// aapt resource value: 0x7f07007d
+			public const int chartView = 2131165309;
 			
 			// aapt resource value: 0x7f070063
 			public const int checkbox = 2131165283;
@@ -2787,8 +2787,8 @@ namespace SmartPiggy.Droid
 			// aapt resource value: 0x7f070024
 			public const int collapseActionView = 2131165220;
 			
-			// aapt resource value: 0x7f07007e
-			public const int container = 2131165310;
+			// aapt resource value: 0x7f07007f
+			public const int container = 2131165311;
 			
 			// aapt resource value: 0x7f070056
 			public const int contentPanel = 2131165270;
@@ -2796,8 +2796,8 @@ namespace SmartPiggy.Droid
 			// aapt resource value: 0x7f070098
 			public const int content_frame = 2131165336;
 			
-			// aapt resource value: 0x7f070087
-			public const int coordinator = 2131165319;
+			// aapt resource value: 0x7f070088
+			public const int coordinator = 2131165320;
 			
 			// aapt resource value: 0x7f07005d
 			public const int custom = 2131165277;
@@ -2811,20 +2811,20 @@ namespace SmartPiggy.Droid
 			// aapt resource value: 0x7f07004f
 			public const int default_activity_button = 2131165263;
 			
-			// aapt resource value: 0x7f070089
-			public const int design_bottom_sheet = 2131165321;
+			// aapt resource value: 0x7f07008a
+			public const int design_bottom_sheet = 2131165322;
+			
+			// aapt resource value: 0x7f070091
+			public const int design_menu_item_action_area = 2131165329;
 			
 			// aapt resource value: 0x7f070090
-			public const int design_menu_item_action_area = 2131165328;
+			public const int design_menu_item_action_area_stub = 2131165328;
 			
 			// aapt resource value: 0x7f07008f
-			public const int design_menu_item_action_area_stub = 2131165327;
+			public const int design_menu_item_text = 2131165327;
 			
 			// aapt resource value: 0x7f07008e
-			public const int design_menu_item_text = 2131165326;
-			
-			// aapt resource value: 0x7f07008d
-			public const int design_navigation_view = 2131165325;
+			public const int design_navigation_view = 2131165326;
 			
 			// aapt resource value: 0x7f070012
 			public const int disableHome = 2131165202;
@@ -2835,8 +2835,8 @@ namespace SmartPiggy.Droid
 			// aapt resource value: 0x7f070021
 			public const int end = 2131165217;
 			
-			// aapt resource value: 0x7f07007f
-			public const int endDate = 2131165311;
+			// aapt resource value: 0x7f070080
+			public const int endDate = 2131165312;
 			
 			// aapt resource value: 0x7f0700b0
 			public const int end_padder = 2131165360;
@@ -2865,14 +2865,14 @@ namespace SmartPiggy.Droid
 			// aapt resource value: 0x7f070033
 			public const int fill_vertical = 2131165235;
 			
-			// aapt resource value: 0x7f070083
-			public const int finalBalance = 2131165315;
+			// aapt resource value: 0x7f070084
+			public const int finalBalance = 2131165316;
 			
 			// aapt resource value: 0x7f07003f
 			public const int @fixed = 2131165247;
 			
-			// aapt resource value: 0x7f07007d
-			public const int header = 2131165309;
+			// aapt resource value: 0x7f07007e
+			public const int header = 2131165310;
 			
 			// aapt resource value: 0x7f070005
 			public const int home = 2131165189;
@@ -2895,14 +2895,14 @@ namespace SmartPiggy.Droid
 			// aapt resource value: 0x7f0700a7
 			public const int info = 2131165351;
 			
-			// aapt resource value: 0x7f070082
-			public const int initialBalance = 2131165314;
+			// aapt resource value: 0x7f070083
+			public const int initialBalance = 2131165315;
 			
 			// aapt resource value: 0x7f070000
 			public const int item_touch_helper_previous_elevation = 2131165184;
 			
-			// aapt resource value: 0x7f070086
-			public const int largeLabel = 2131165318;
+			// aapt resource value: 0x7f070087
+			public const int largeLabel = 2131165319;
 			
 			// aapt resource value: 0x7f070034
 			public const int left = 2131165236;
@@ -2946,8 +2946,8 @@ namespace SmartPiggy.Droid
 			// aapt resource value: 0x7f070019
 			public const int multiply = 2131165209;
 			
-			// aapt resource value: 0x7f07008c
-			public const int navigation_header_container = 2131165324;
+			// aapt resource value: 0x7f07008d
+			public const int navigation_header_container = 2131165325;
 			
 			// aapt resource value: 0x7f070026
 			public const int never = 2131165222;
@@ -2979,8 +2979,8 @@ namespace SmartPiggy.Droid
 			// aapt resource value: 0x7f070055
 			public const int parentPanel = 2131165269;
 			
-			// aapt resource value: 0x7f07007b
-			public const int persentage = 2131165307;
+			// aapt resource value: 0x7f07007c
+			public const int persentage = 2131165308;
 			
 			// aapt resource value: 0x7f070038
 			public const int pin = 2131165240;
@@ -3003,8 +3003,8 @@ namespace SmartPiggy.Droid
 			// aapt resource value: 0x7f0700a4
 			public const int right_side = 2131165348;
 			
-			// aapt resource value: 0x7f070084
-			public const int saveButton = 2131165316;
+			// aapt resource value: 0x7f070085
+			public const int saveButton = 2131165317;
 			
 			// aapt resource value: 0x7f07001a
 			public const int screen = 2131165210;
@@ -3069,14 +3069,14 @@ namespace SmartPiggy.Droid
 			// aapt resource value: 0x7f070017
 			public const int showTitle = 2131165207;
 			
-			// aapt resource value: 0x7f070085
-			public const int smallLabel = 2131165317;
+			// aapt resource value: 0x7f070086
+			public const int smallLabel = 2131165318;
+			
+			// aapt resource value: 0x7f07008c
+			public const int snackbar_action = 2131165324;
 			
 			// aapt resource value: 0x7f07008b
-			public const int snackbar_action = 2131165323;
-			
-			// aapt resource value: 0x7f07008a
-			public const int snackbar_text = 2131165322;
+			public const int snackbar_text = 2131165323;
 			
 			// aapt resource value: 0x7f07002e
 			public const int snap = 2131165230;
@@ -3105,8 +3105,8 @@ namespace SmartPiggy.Droid
 			// aapt resource value: 0x7f070036
 			public const int start = 2131165238;
 			
-			// aapt resource value: 0x7f070080
-			public const int startDate = 2131165312;
+			// aapt resource value: 0x7f070081
+			public const int startDate = 2131165313;
 			
 			// aapt resource value: 0x7f07009f
 			public const int status_bar_latest_event_content = 2131165343;
@@ -3132,11 +3132,11 @@ namespace SmartPiggy.Droid
 			// aapt resource value: 0x7f070059
 			public const int textSpacerNoTitle = 2131165273;
 			
-			// aapt resource value: 0x7f070092
-			public const int textView2 = 2131165330;
+			// aapt resource value: 0x7f070093
+			public const int textView2 = 2131165331;
 			
-			// aapt resource value: 0x7f070091
-			public const int text_input_password_toggle = 2131165329;
+			// aapt resource value: 0x7f070092
+			public const int text_input_password_toggle = 2131165330;
 			
 			// aapt resource value: 0x7f07000c
 			public const int textinput_counter = 2131165196;
@@ -3165,8 +3165,8 @@ namespace SmartPiggy.Droid
 			// aapt resource value: 0x7f07005e
 			public const int topPanel = 2131165278;
 			
-			// aapt resource value: 0x7f070088
-			public const int touch_outside = 2131165320;
+			// aapt resource value: 0x7f070089
+			public const int touch_outside = 2131165321;
 			
 			// aapt resource value: 0x7f07000a
 			public const int transition_current_scene = 2131165194;
@@ -3339,58 +3339,58 @@ namespace SmartPiggy.Droid
 			public const int abc_select_dialog_material = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int aim_list_item = 2130903067;
+			public const int aim_list_fragment = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
-			public const int create_aim = 2130903068;
+			public const int aim_list_item = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
-			public const int design_bottom_navigation_item = 2130903069;
+			public const int create_aim = 2130903069;
 			
 			// aapt resource value: 0x7f03001e
-			public const int design_bottom_sheet_dialog = 2130903070;
+			public const int design_bottom_navigation_item = 2130903070;
 			
 			// aapt resource value: 0x7f03001f
-			public const int design_layout_snackbar = 2130903071;
+			public const int design_bottom_sheet_dialog = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public const int design_layout_snackbar_include = 2130903072;
+			public const int design_layout_snackbar = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public const int design_layout_tab_icon = 2130903073;
+			public const int design_layout_snackbar_include = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public const int design_layout_tab_text = 2130903074;
+			public const int design_layout_tab_icon = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public const int design_menu_item_action_area = 2130903075;
+			public const int design_layout_tab_text = 2130903075;
 			
 			// aapt resource value: 0x7f030024
-			public const int design_navigation_item = 2130903076;
+			public const int design_menu_item_action_area = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public const int design_navigation_item_header = 2130903077;
+			public const int design_navigation_item = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int design_navigation_item_separator = 2130903078;
+			public const int design_navigation_item_header = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public const int design_navigation_item_subheader = 2130903079;
+			public const int design_navigation_item_separator = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int design_navigation_menu = 2130903080;
+			public const int design_navigation_item_subheader = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int design_navigation_menu_item = 2130903081;
+			public const int design_navigation_menu = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public const int design_text_input_password_icon = 2130903082;
+			public const int design_navigation_menu_item = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int fragment2 = 2130903083;
+			public const int design_text_input_password_icon = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int fragment3 = 2130903084;
+			public const int fragment2 = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
 			public const int main = 2130903085;

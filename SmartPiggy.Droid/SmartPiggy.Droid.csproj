@@ -136,6 +136,7 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="BottomNavigationViewUtils.cs" />
+    <Compile Include="Extensions\BindExtensions.cs" />
     <Compile Include="Fragments\Adapters\AimsAdapter.cs" />
     <Compile Include="Fragments\DatePickerFragment.cs" />
     <Compile Include="Fragments\CreateAim.cs" />
@@ -154,7 +155,7 @@
     <AndroidResource Include="Resources\layout\toolbar.xml" />
     <AndroidResource Include="Resources\layout\create_aim.xml" />
     <AndroidResource Include="Resources\layout\fragment2.xml" />
-    <AndroidResource Include="Resources\layout\fragment3.xml" />
+    <AndroidResource Include="Resources\layout\aim_list_fragment.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\main.xml">

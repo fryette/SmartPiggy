@@ -30,7 +30,7 @@ namespace SmartPiggy.Droid.Fragments
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
 			var ignored = base.OnCreateView(inflater, container, savedInstanceState);
-			var fragment = inflater.Inflate(Resource.Layout.fragment3, null);
+			var fragment = inflater.Inflate(Resource.Layout.aim_list_fragment, null);
 
 
 			var listview = fragment.FindViewById<ListView>(Resource.Id.aims);

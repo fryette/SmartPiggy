@@ -2,6 +2,7 @@
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
+using SmartPiggy.Core.Extensions;
 using SmartPiggy.Core.Interfaces;
 using SmartPiggy.Core.Models;
 
@@ -39,7 +40,8 @@ namespace SmartPiggy.Core.ViewModels
 						FinalDate = FinalDate.Value,
 						StartDate = StartDate.Value,
 					});
-					navigation.NavigateTo(ViewModelLocator.MAIN_PAGE_KEY);
+
+					navigation.NavigateTo(PageKeys.MAIN_PAGE);
 				}
 				else
 				{
