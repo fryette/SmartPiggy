@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
@@ -12,7 +13,7 @@ namespace SmartPiggy.Droid.Fragments
 {
 	public class AimListFragment : Fragment
 	{
-		private MainViewModel Vm => App.Locator.Main;
+		private MainViewModel _viewModel;
 
 		public override void OnCreate(Bundle savedInstanceState)
 		{
@@ -29,9 +30,11 @@ namespace SmartPiggy.Droid.Fragments
 
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
-			var ignored = base.OnCreateView(inflater, container, savedInstanceState);
-			var fragment = inflater.Inflate(Resource.Layout.aim_list_fragment, null);
+			base.OnCreateView(inflater, container, savedInstanceState);
 
+			_viewModel = App.Locator.Main;
+
+			var fragment = inflater.Inflate(Resource.Layout.aim_list_fragment, null);
 
 			var listview = fragment.FindViewById<ListView>(Resource.Id.aims);
 
@@ -44,17 +47,33 @@ namespace SmartPiggy.Droid.Fragments
 					Activity.RunOnUiThread(
 						() =>
 						{
-							listview.Adapter = new AimsAdapter(Activity, aims.ToList());
+							listview.Adapter = new AimsAdapter(Activity, aims.ToList(), CreateDialog());
 						});
 				});
 
-			listview.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
+			listview.ItemClick += delegate
 			{
-				Vm.NavigateToCreateAimPage();
+				_viewModel.NavigateToCreateAimPage();
 				//Toast.MakeText(Activity, ((TextView)args.View).Text, ToastLength.Short).Show();
 			};
 
 			return fragment;
+		}
+
+		private AlertDialog CreateDialog()
+		{
+			var builder = new AlertDialog.Builder(View.Context);
+
+			builder.SetItems(new[] { "REMOVE" }, HandleDialogClick);
+			return builder.Create();
+		}
+
+		private void HandleDialogClick(object sender, DialogClickEventArgs e)
+		{
+			if (e.Which == 0)
+			{
+				//_viewModel.AimActionsViewModel.RemoveAimAsync()
+			}
 		}
 	}
 }

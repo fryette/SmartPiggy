@@ -1,21 +1,22 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
-using SmartPiggy.Core.Extensions;
-using SmartPiggy.Core.Interfaces;
+using SmartPiggy.Core.ViewModels.App;
 
 namespace SmartPiggy.Core.ViewModels
 {
 	public class MainViewModel : ViewModelBase
 	{
 		private readonly INavigationService _navigationService;
+		public readonly AimActionsViewModel AimActionsViewModel;
 
 		/// <summary>
 		/// Initializes a new instance of the MainViewModel class.
 		/// </summary>
-		public MainViewModel(INavigationService navigationService)
+		public MainViewModel(INavigationService navigationService, AimActionsViewModel aimActionsViewModel)
 		{
 			_navigationService = navigationService;
+			AimActionsViewModel = aimActionsViewModel;
 		}
 
 		public void NavigateToCreateAimPage()

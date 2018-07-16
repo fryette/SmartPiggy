@@ -2,6 +2,7 @@
 using CommonServiceLocator;
 using GalaSoft.MvvmLight.Ioc;
 using SmartPiggy.Core.Interfaces;
+using SmartPiggy.Core.ViewModels.App;
 
 namespace SmartPiggy.Core.ViewModels
 {
@@ -12,6 +13,7 @@ namespace SmartPiggy.Core.ViewModels
 			ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 			SimpleIoc.Default.Register<MainViewModel>();
 			SimpleIoc.Default.Register<CreateAimViewModel>();
+			SimpleIoc.Default.Register<AimActionsViewModel>();
 
 			SimpleIoc.Default.Register<IAimManager, AimManager>();
 		}

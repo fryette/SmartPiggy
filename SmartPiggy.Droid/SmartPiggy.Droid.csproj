@@ -209,6 +209,7 @@
     <AndroidResource Include="Resources\layout\aim_list_item.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\drawable\icon_vertical_more_options.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SmartPiggy.Core\SmartPiggy.Core.csproj">
